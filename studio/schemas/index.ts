@@ -7,6 +7,7 @@ import { author } from "./documents/author";
 import { category } from "./documents/category";
 import { impactStatistic } from "./documents/impactStatistic";
 import { partner } from "./documents/partner";
+import { teamMember } from "./documents/teamMember";
 import { siteSettings } from "./documents/siteSettings";
 
 /** Document types that exist as a single editable document (no create/delete). */
@@ -22,5 +23,6 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   category,
   impactStatistic,
   partner,
+  teamMember,
   siteSettings,
 ];

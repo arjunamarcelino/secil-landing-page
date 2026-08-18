@@ -14,6 +14,8 @@ import type {
   ProgramStatus,
   RichText,
   SiteSettings,
+  TeamDivision,
+  TeamMember,
 } from "@/content/types";
 
 import { siteSettings } from "./fallback/site-settings";
@@ -21,6 +23,7 @@ import { programs } from "./fallback/programs";
 import { articles } from "./fallback/articles";
 import { statistics } from "./fallback/statistics";
 import { partners } from "./fallback/partners";
+import { team } from "./fallback/team";
 
 /*
   The seam. Each function returns local fallback content when Sanity is not
@@ -182,4 +185,24 @@ export async function getPartners(): Promise<readonly Partner[]> {
     { tags: ["partner"] },
   );
   return raw.map((p) => ({ name: p.name, website: p.website, order: p.order, logo: toImage(p.logo, p.name) }));
+}
+
+interface RawTeamMember {
+  name: string;
+  position: string;
+  division: TeamDivision;
+  order: number;
+  photo: RawImage | null;
+}
+
+export async function getTeamMembers(): Promise<readonly TeamMember[]> {
+  if (!isSanityConfigured) return team;
+  const raw = await sanityFetch<RawTeamMember[]>(q.teamMembersQuery, {}, { tags: ["teamMember"] });
+  return raw.map((m) => ({
+    name: m.name,
+    position: m.position,
+    division: m.division,
+    order: m.order,
+    photo: m.photo?.ref ? toImage(m.photo, m.name) : undefined,
+  }));
 }

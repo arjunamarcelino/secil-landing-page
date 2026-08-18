@@ -78,3 +78,9 @@ export const impactStatisticsQuery = defineQuery(
 export const partnersQuery = defineQuery(
   `*[_type == "partner"] | order(order asc){ name, website, order, "logo": logo${imageProjection} }`,
 );
+
+export const teamMembersQuery = defineQuery(
+  `*[_type == "teamMember"] | order(order asc){
+    name, position, division, order, "photo": photo${imageProjection}
+  }`,
+);

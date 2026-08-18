@@ -91,6 +91,36 @@ export interface Partner {
   readonly order: number;
 }
 
+export const TEAM_DIVISIONS = [
+  "founders",
+  "pengurus-inti",
+  "rnd",
+  "teach",
+  "pr",
+  "survey",
+  "design",
+] as const;
+export type TeamDivision = (typeof TEAM_DIVISIONS)[number];
+
+/** Display labels + order for team divisions (order = array order above). */
+export const TEAM_DIVISION_LABELS: Readonly<Record<TeamDivision, string>> = {
+  founders: "Founders",
+  "pengurus-inti": "Pengurus Inti",
+  rnd: "Research & Development",
+  teach: "Teach & Materials",
+  pr: "Public Relations",
+  survey: "Survey Team",
+  design: "Design & Documentaries",
+};
+
+export interface TeamMember {
+  readonly name: string;
+  readonly position: string;
+  readonly division: TeamDivision;
+  readonly photo?: DomainImage;
+  readonly order: number;
+}
+
 export interface SocialLink {
   readonly platform: string;
   readonly url: string;

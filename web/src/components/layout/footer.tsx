@@ -30,6 +30,12 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               {item.label}
             </Link>
           ))}
+          <Link href="/tim" className="text-sm text-muted-foreground hover:text-foreground">
+            Tim
+          </Link>
+          <Link href="/cerita" className="text-sm text-muted-foreground hover:text-foreground">
+            Cerita Lainnya
+          </Link>
         </nav>
 
         <div className="flex flex-col gap-2">

@@ -1,4 +1,5 @@
 import { Container } from "@/components/common/container";
+import { ButtonLink } from "@/components/common/button-link";
 
 const values = [
   { title: "Tulus", body: "Kami hadir dengan hati, tanpa pamrih, untuk mendampingi anak-anak bertumbuh." },
@@ -44,6 +45,12 @@ export function Tentang({ description }: { description: string }) {
               <p className="text-muted-foreground">{value.body}</p>
             </div>
           ))}
+        </div>
+
+        <div>
+          <ButtonLink href="/tim" variant="secondary">
+            Kenali tim kami
+          </ButtonLink>
         </div>
       </Container>
     </section>

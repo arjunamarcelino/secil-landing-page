@@ -12,4 +12,4 @@ export const NAV_ITEMS = [
 ] as const;
 
 /** Real routes (not anchors) for the sitemap. */
-export const STATIC_ROUTES = ["/", "/cerita"] as const;
+export const STATIC_ROUTES = ["/", "/cerita", "/tim"] as const;
