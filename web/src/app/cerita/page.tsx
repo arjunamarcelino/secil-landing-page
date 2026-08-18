@@ -10,9 +10,9 @@ export const dynamic = "error";
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Cerita",
+  title: "Cerita & Laporan",
   description:
-    "Kisah dampak, cerita relawan, dan artikel dari kegiatan Senyum Kecil Medan bersama anak-anak.",
+    "Kisah dampak, cerita relawan, dan laporan kegiatan dari Senyum Kecil Medan bersama anak-anak.",
   alternates: { canonical: "/cerita" },
 };
 
@@ -24,9 +24,9 @@ export default async function CeritaPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Cerita"
-        title="Kisah dari lapangan"
-        description="Cerita kecil yang mengingatkan kami mengapa pekerjaan ini penting."
+        eyebrow="Cerita & Laporan"
+        title="Kisah dan laporan dari lapangan"
+        description="Cerita kecil yang mengingatkan kami mengapa pekerjaan ini penting, serta laporan kegiatan kami."
       />
 
       <Container className="py-16 sm:py-20">

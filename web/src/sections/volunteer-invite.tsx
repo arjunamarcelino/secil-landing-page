@@ -1,5 +1,6 @@
 import { Container } from "@/components/common/container";
 import { ButtonLink } from "@/components/common/button-link";
+import { ExternalLink } from "@/components/common/external-link";
 import { ResponsiveImage } from "@/components/common/responsive-image";
 import { img, local } from "@/content/fallback/images";
 
@@ -8,9 +9,15 @@ const volunteerImage = local(
   "Relawan Senyum Kecil mendampingi anak-anak dalam kegiatan belajar",
 );
 
-export function VolunteerInvite() {
+export function VolunteerInvite({
+  email,
+  instagramUrl,
+}: {
+  email?: string;
+  instagramUrl?: string;
+}) {
   return (
-    <section aria-labelledby="volunteer-heading" className="py-16 sm:py-20">
+    <section id="relawan" aria-labelledby="volunteer-heading" className="py-16 sm:py-20">
       <Container className="grid items-center gap-10 lg:grid-cols-2">
         <ResponsiveImage
           image={volunteerImage}
@@ -29,13 +36,20 @@ export function VolunteerInvite() {
           </h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
             Kamu tidak perlu keahlian khusus untuk membuat perbedaan. Cukup hadir,
-            mendampingi, dan berbagi waktu. Bersama, kita bisa membuka lebih banyak
-            kesempatan belajar bagi anak-anak Medan.
+            mendampingi, dan berbagi waktu. Ceritakan sedikit tentang dirimu dan waktu yang
+            bisa kamu luangkan—tim kami akan menghubungimu kembali.
           </p>
-          <div>
-            <ButtonLink href="/volunteer" variant="teal" size="lg">
-              Gabung jadi relawan
-            </ButtonLink>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            {email && (
+              <ButtonLink href={`mailto:${email}`} variant="teal" size="lg">
+                Gabung jadi relawan
+              </ButtonLink>
+            )}
+            {instagramUrl && (
+              <ExternalLink href={instagramUrl} className="inline-flex items-center font-medium">
+                Pesan lewat Instagram
+              </ExternalLink>
+            )}
           </div>
         </div>
       </Container>

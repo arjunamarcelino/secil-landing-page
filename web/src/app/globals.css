@@ -110,6 +110,14 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Offset anchor targets so the sticky header doesn't cover section headings. */
+  section[id],
+  [id].scroll-anchor {
+    scroll-margin-top: 5rem;
+  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }

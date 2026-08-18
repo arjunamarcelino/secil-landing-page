@@ -25,7 +25,7 @@ export function Header({ orgName }: { orgName: string }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ButtonLink href="/donasi" variant="primary" className="hidden sm:inline-flex">
+          <ButtonLink href="/#donasi" variant="primary" className="hidden sm:inline-flex">
             Dukung Senyum Mereka
           </ButtonLink>
           <MobileNav />

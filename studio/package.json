@@ -4,6 +4,7 @@
   "private": true,
   "description": "Sanity Studio for Senyum Kecil Medan",
   "type": "module",
+  "packageManager": "pnpm@10.29.2",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
@@ -22,5 +23,8 @@
     "@types/node": "^26.2.0",
     "@types/react": "^19",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
   }
 }

@@ -55,7 +55,7 @@ export const allArticlesQuery = defineQuery(
 );
 
 export const latestArticlesQuery = defineQuery(
-  `*[_type == "article"] | order(publishedAt desc)[0...$limit] ${articleCardFields}`,
+  `*[_type == "article"] | order(publishedAt desc)[0...6] ${articleCardFields}`,
 );
 
 export const articleBySlugQuery = defineQuery(`*[_type == "article" && slug.current == $slug][0]{
@@ -77,10 +77,4 @@ export const impactStatisticsQuery = defineQuery(
 
 export const partnersQuery = defineQuery(
   `*[_type == "partner"] | order(order asc){ name, website, order, "logo": logo${imageProjection} }`,
-);
-
-export const transparencyReportsQuery = defineQuery(
-  `*[_type == "transparencyReport"] | order(year desc, publishedAt desc){
-    title, year, description, publishedAt, "fileUrl": file.asset->url, externalUrl
-  }`,
 );

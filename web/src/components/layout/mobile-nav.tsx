@@ -45,7 +45,7 @@ export function MobileNav() {
           ))}
         </nav>
         <div className="mt-4 px-5">
-          <ButtonLink href="/donasi" variant="primary" className="w-full">
+          <ButtonLink href="/#donasi" variant="primary" className="w-full">
             Dukung Senyum Mereka
           </ButtonLink>
         </div>

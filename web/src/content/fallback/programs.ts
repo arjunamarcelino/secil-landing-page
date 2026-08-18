@@ -32,7 +32,7 @@ export const programs: readonly Program[] = [
     startDate: "2021-09-01",
     featured: true,
     ctaLabel: "Jadi relawan pendamping",
-    ctaUrl: "/volunteer",
+    ctaUrl: "/#relawan",
   },
   {
     name: "Taman Baca Keliling",
@@ -56,7 +56,7 @@ export const programs: readonly Program[] = [
     startDate: "2022-03-01",
     featured: true,
     ctaLabel: "Donasikan buku",
-    ctaUrl: "/donasi",
+    ctaUrl: "/#donasi",
   },
   {
     name: "Kelas Keterampilan Remaja",
@@ -77,7 +77,7 @@ export const programs: readonly Program[] = [
     startDate: "2026-10-01",
     featured: false,
     ctaLabel: "Kenali programnya",
-    ctaUrl: "/program",
+    ctaUrl: "/#program",
   },
 ] as const;
 

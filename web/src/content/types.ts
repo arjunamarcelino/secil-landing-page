@@ -91,20 +91,6 @@ export interface Partner {
   readonly order: number;
 }
 
-/** A transparency report links to either an uploaded file or an external URL. */
-export type ReportSource =
-  | { readonly kind: "file"; readonly url: string }
-  | { readonly kind: "external"; readonly href: string }
-  | { readonly kind: "none" };
-
-export interface TransparencyReport {
-  readonly title: string;
-  readonly year: number;
-  readonly description: string;
-  readonly source: ReportSource;
-  readonly publishedAt: string; // ISO date
-}
-
 export interface SocialLink {
   readonly platform: string;
   readonly url: string;

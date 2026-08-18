@@ -16,4 +16,9 @@ export const categories = {
     slug: "relawan",
     description: "Kisah para relawan yang menggerakkan program di lapangan.",
   },
+  laporan: {
+    title: "Laporan Kegiatan",
+    slug: "laporan-kegiatan",
+    description: "Laporan dan rekap kegiatan serta penggunaan dukungan.",
+  },
 } as const satisfies Record<string, Category>;

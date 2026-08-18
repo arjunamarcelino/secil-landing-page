@@ -44,10 +44,10 @@ export function Hero({ topStat }: { topStat?: ImpactStatistic }) {
             kami untuk menghadirkan lebih banyak senyum.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/donasi" variant="primary" size="lg">
+            <ButtonLink href="/#donasi" variant="primary" size="lg">
               Dukung Senyum Mereka
             </ButtonLink>
-            <ButtonLink href="/tentang" variant="secondary" size="lg">
+            <ButtonLink href="/#tentang" variant="secondary" size="lg">
               Kenali Kami
             </ButtonLink>
           </div>

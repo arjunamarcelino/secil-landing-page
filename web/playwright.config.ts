@@ -3,7 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 /**
  * Smoke tests run against the production server (`next start`) so they exercise
  * the same statically generated output that ships. Build first, then test:
- *   npm run build && npm run test:e2e
+ *   pnpm build && pnpm test:e2e
  */
 export default defineConfig({
   testDir: "./e2e",
@@ -19,7 +19,7 @@ export default defineConfig({
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
   ],
   webServer: {
-    command: "npm run start",
+    command: "pnpm start",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

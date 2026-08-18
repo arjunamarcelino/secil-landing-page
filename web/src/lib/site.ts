@@ -1,20 +1,15 @@
-/** Primary navigation — shared by header, mobile nav, footer and sitemap. */
+/**
+ * Primary navigation. The landing page is a single page; these links point at
+ * section anchors via `/#id` so they scroll on the home page and navigate-then-
+ * scroll from any other route (e.g. /cerita, /program/[slug]).
+ */
 export const NAV_ITEMS = [
-  { href: "/tentang", label: "Tentang" },
-  { href: "/program", label: "Program" },
-  { href: "/cerita", label: "Cerita" },
-  { href: "/transparansi", label: "Transparansi" },
-  { href: "/volunteer", label: "Relawan" },
-  { href: "/donasi", label: "Donasi" },
+  { href: "/#tentang", label: "Tentang" },
+  { href: "/#program", label: "Program" },
+  { href: "/#cerita", label: "Cerita" },
+  { href: "/#relawan", label: "Relawan" },
+  { href: "/#donasi", label: "Donasi" },
 ] as const;
 
-/** Static routes (no dynamic slug) for the sitemap. */
-export const STATIC_ROUTES = [
-  "/",
-  "/tentang",
-  "/program",
-  "/cerita",
-  "/transparansi",
-  "/volunteer",
-  "/donasi",
-] as const;
+/** Real routes (not anchors) for the sitemap. */
+export const STATIC_ROUTES = ["/", "/cerita"] as const;

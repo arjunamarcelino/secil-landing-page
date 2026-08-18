@@ -69,6 +69,49 @@ export const articles: readonly Article[] = [
     publishedAt: "2026-03-02",
     featured: false,
   },
+  {
+    title: "Laporan Kegiatan: Bulan Buku Ceria 2026",
+    slug: "laporan-bulan-buku-ceria-2026",
+    excerpt:
+      "Rekap kegiatan Bulan Buku Ceria: jumlah anak yang terlibat, buku yang tersalurkan, dan penggunaan donasi.",
+    coverImage: local(img.gallery3, "Kegiatan Bulan Buku Ceria bersama anak-anak"),
+    content: [
+      block(
+        "Bulan Buku Ceria adalah rangkaian kegiatan membaca selama satu bulan penuh yang digelar di 12 titik kegiatan. Berikut rekap singkatnya.",
+      ),
+      block("Ringkasan capaian", "h2"),
+      block(
+        "Sepanjang kegiatan, lebih dari 600 anak terlibat aktif dan sekitar 850 buku bacaan disalurkan melalui taman baca keliling. Kegiatan didukung oleh 40 relawan dari berbagai latar belakang.",
+      ),
+      block("Penggunaan dukungan", "h2"),
+      block(
+        "Donasi yang terkumpul digunakan untuk pengadaan buku, perlengkapan belajar, dan biaya operasional taman baca keliling. Laporan keuangan lengkap dapat diminta melalui surel kami.",
+      ),
+    ],
+    author: authors.ratna,
+    categories: [categories.laporan],
+    publishedAt: "2026-06-05",
+    featured: false,
+  },
+  {
+    title: "Laporan Kegiatan: Kelas Belajar Semester Ganjil",
+    slug: "laporan-kelas-belajar-semester-ganjil",
+    excerpt:
+      "Rangkuman jalannya kelas belajar mingguan pada semester ganjil beserta perkembangan anak-anak.",
+    coverImage: local(img.gallery1, "Kelas belajar mingguan pada semester ganjil"),
+    content: [
+      block(
+        "Selama semester ganjil, kelas belajar mingguan berjalan konsisten di sembilan titik. Kehadiran anak-anak meningkat dibanding periode sebelumnya.",
+      ),
+      block(
+        "Kami mencatat kemajuan membaca pada sebagian besar peserta, serta antusiasme yang tinggi pada sesi bercerita dan menggambar.",
+      ),
+    ],
+    author: authors.dimas,
+    categories: [categories.laporan, categories.pendidikan],
+    publishedAt: "2026-01-18",
+    featured: false,
+  },
 ] as const;
 
 /** Pinned slug guaranteed to exist in fallback data — used by the smoke test. */

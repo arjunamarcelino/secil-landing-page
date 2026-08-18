@@ -1,20 +1,15 @@
 import { test, expect } from "@playwright/test";
 
 /*
-  Smoke coverage: every route returns 200 and renders its key section (an <h1>).
-  Dynamic routes use slugs pinned in the fallback fixtures
-  (PINNED_PROGRAM_SLUG / PINNED_ARTICLE_SLUG in src/content/fallback/*).
+  Smoke coverage for the one-page site + the blog list/detail and program detail.
+  Dynamic slugs are pinned in the fallback fixtures (src/content/fallback/*).
 */
 const routes: ReadonlyArray<{ path: string; heading: RegExp }> = [
   { path: "/", heading: /berhak/i },
-  { path: "/tentang", heading: /bertumbuh/i },
-  { path: "/program", heading: /program/i },
-  { path: "/program/kelas-baca-ceria", heading: /kelas baca ceria/i },
-  { path: "/cerita", heading: /kisah/i },
+  { path: "/cerita", heading: /kisah dan laporan/i },
   { path: "/cerita/cerita-kecil-dari-kelas-baca", heading: /kelas baca/i },
-  { path: "/transparansi", heading: /keterbukaan/i },
-  { path: "/volunteer", heading: /senyum mereka/i },
-  { path: "/donasi", heading: /dukung/i },
+  { path: "/cerita/laporan-bulan-buku-ceria-2026", heading: /bulan buku ceria/i },
+  { path: "/program/kelas-baca-ceria", heading: /kelas baca ceria/i },
 ];
 
 for (const route of routes) {
@@ -26,8 +21,27 @@ for (const route of routes) {
   });
 }
 
+test("home page has all navigable section anchors", async ({ page }) => {
+  await page.goto("/");
+  for (const id of ["tentang", "program", "cerita", "relawan", "donasi"]) {
+    await expect(page.locator(`#${id}`)).toBeAttached();
+  }
+});
+
+test("navbar links point at section anchors", async ({ page }) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("navigation", { name: /navigasi utama/i }).getByRole("link", { name: "Tentang" }).first(),
+  ).toHaveAttribute("href", "/#tentang");
+});
+
 test("unknown program slug returns 404", async ({ page }) => {
   const response = await page.goto("/program/slug-yang-tidak-ada");
+  expect(response?.status()).toBe(404);
+});
+
+test("unknown story slug returns 404", async ({ page }) => {
+  const response = await page.goto("/cerita/slug-yang-tidak-ada");
   expect(response?.status()).toBe(404);
 });
 

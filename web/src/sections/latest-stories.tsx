@@ -10,7 +10,7 @@ export function LatestStories({ articles }: { articles: readonly Article[] }) {
   const [lead, ...rest] = articles;
 
   return (
-    <section aria-labelledby="stories-heading" className="bg-surface-sunken py-16 sm:py-20">
+    <section id="cerita" aria-labelledby="stories-heading" className="bg-surface-sunken py-16 sm:py-20">
       <Container className="flex flex-col gap-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
@@ -19,7 +19,7 @@ export function LatestStories({ articles }: { articles: readonly Article[] }) {
             title="Kisah dampak dari lapangan"
           />
           <ButtonLink href="/cerita" variant="secondary">
-            Baca semua cerita
+            Cerita Lainnya
           </ButtonLink>
         </div>
 

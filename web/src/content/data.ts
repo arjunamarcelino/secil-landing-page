@@ -12,10 +12,8 @@ import type {
   Partner,
   Program,
   ProgramStatus,
-  ReportSource,
   RichText,
   SiteSettings,
-  TransparencyReport,
 } from "@/content/types";
 
 import { siteSettings } from "./fallback/site-settings";
@@ -23,7 +21,6 @@ import { programs } from "./fallback/programs";
 import { articles } from "./fallback/articles";
 import { statistics } from "./fallback/statistics";
 import { partners } from "./fallback/partners";
-import { reports } from "./fallback/reports";
 
 /*
   The seam. Each function returns local fallback content when Sanity is not
@@ -74,15 +71,6 @@ interface RawArticle {
   author: RawAuthor;
   categories: RawCategory[];
 }
-interface RawReport {
-  title: string;
-  year: number;
-  description: string;
-  publishedAt: string;
-  fileUrl?: string;
-  externalUrl?: string;
-}
-
 // --- mappers ------------------------------------------------------------------
 function toImage(raw: RawImage, fallbackAlt = ""): DomainImage {
   return { kind: "sanity", source: raw.ref as SanityImageSource, alt: raw.alt || fallbackAlt };
@@ -126,21 +114,6 @@ function toArticle(raw: RawArticle): Article {
     seoDescription: raw.seoDescription,
   };
 }
-function toReport(raw: RawReport): TransparencyReport {
-  const source: ReportSource = raw.fileUrl
-    ? { kind: "file", url: raw.fileUrl }
-    : raw.externalUrl
-      ? { kind: "external", href: raw.externalUrl }
-      : { kind: "none" };
-  return {
-    title: raw.title,
-    year: raw.year,
-    description: raw.description,
-    source,
-    publishedAt: raw.publishedAt,
-  };
-}
-
 // --- public data functions ----------------------------------------------------
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   if (!isSanityConfigured) return siteSettings;
@@ -174,8 +147,8 @@ export async function getProgramSlugs(): Promise<readonly string[]> {
 
 export async function getLatestArticles(limit = 3): Promise<readonly Article[]> {
   if (!isSanityConfigured) return articles.slice(0, limit);
-  const raw = await sanityFetch<RawArticle[]>(q.latestArticlesQuery, { limit: String(limit) }, { tags: ["article"] });
-  return raw.map(toArticle);
+  const raw = await sanityFetch<RawArticle[]>(q.latestArticlesQuery, {}, { tags: ["article"] });
+  return raw.map(toArticle).slice(0, limit);
 }
 
 export async function getAllArticles(): Promise<readonly Article[]> {
@@ -209,10 +182,4 @@ export async function getPartners(): Promise<readonly Partner[]> {
     { tags: ["partner"] },
   );
   return raw.map((p) => ({ name: p.name, website: p.website, order: p.order, logo: toImage(p.logo, p.name) }));
-}
-
-export async function getTransparencyReports(): Promise<readonly TransparencyReport[]> {
-  if (!isSanityConfigured) return reports;
-  const raw = await sanityFetch<RawReport[]>(q.transparencyReportsQuery, {}, { tags: ["transparencyReport"] });
-  return raw.map(toReport);
 }

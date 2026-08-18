@@ -1,7 +1,6 @@
 import { Container } from "@/components/common/container";
 import { SectionHeading } from "@/components/common/section-heading";
 import { ProgramCard } from "@/components/common/program-card";
-import { ButtonLink } from "@/components/common/button-link";
 import { EmptyState } from "@/components/common/empty-state";
 import type { Program } from "@/content/types";
 
@@ -10,18 +9,14 @@ export function FeaturedPrograms({ programs }: { programs: readonly Program[] })
   const [lead, ...rest] = programs;
 
   return (
-    <section aria-labelledby="programs-heading" className="bg-surface-sunken py-16 sm:py-20">
+    <section id="program" aria-labelledby="programs-heading" className="bg-surface-sunken py-16 sm:py-20">
       <Container className="flex flex-col gap-10">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading
-            id="programs-heading"
-            eyebrow="Program Kami"
-            title="Kegiatan yang sedang kami jalankan"
-          />
-          <ButtonLink href="/program" variant="secondary">
-            Lihat semua program
-          </ButtonLink>
-        </div>
+        <SectionHeading
+          id="programs-heading"
+          eyebrow="Program Kami"
+          title="Kegiatan yang sedang kami jalankan"
+          description="Setiap program dirancang untuk membuka kesempatan belajar dan bermain bagi anak-anak Medan."
+        />
 
         {programs.length === 0 ? (
           <EmptyState
