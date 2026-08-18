@@ -7,6 +7,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Emit a self-contained server bundle for Docker deployment.
+  output: "standalone",
   images: {
     // Only Sanity's image CDN is allowed — keeps the next/image optimizer from
     // acting as an open proxy. Local fallback photography needs no remote host.

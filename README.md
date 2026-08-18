@@ -40,7 +40,7 @@ lockfile (no workspaces). Run each from its own directory.
 
 ## Requirements
 
-- Node.js **≥ 20** (`nvm use` picks up `.nvmrc`)
+- Node.js **≥ 22** (`nvm use` picks up `.nvmrc`; the Sanity CLI requires Node ≥ 22.12)
 - **pnpm** (`corepack enable pnpm` if you don't have it)
 
 ## Environment variables
@@ -158,6 +158,52 @@ web/src/
 ring, `prefers-reduced-motion` support, section anchors with scroll offset, AA-contrast
 palette, per-route metadata, OpenGraph + default OG image, canonical URLs, JSON-LD
 Organization, `robots.ts` and a dynamic `sitemap.ts`.
+
+## Deployment (Docker / Easypanel)
+
+Each app ships a production `Dockerfile`. In Easypanel, create one service per app
+using **Dockerfile** as the build method, pointing at the app's subdirectory.
+
+### Web (`web/Dockerfile`)
+
+Multi-stage build producing a minimal Next.js **standalone** server. Listens on **port
+3000**.
+
+`NEXT_PUBLIC_*` variables are **inlined at build time**, so set them as **build args**
+(not runtime env) in Easypanel:
+
+| Build arg | Example |
+|---|---|
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | your Sanity project id (omit to build on fallback content) |
+| `NEXT_PUBLIC_SANITY_DATASET` | `production` |
+| `NEXT_PUBLIC_SANITY_API_VERSION` | `2026-03-01` |
+| `NEXT_PUBLIC_SITE_URL` | `https://senyumkecilmedan.org` |
+
+```bash
+# local test
+docker build -t secil-web ./web \
+  --build-arg NEXT_PUBLIC_SITE_URL=https://senyumkecilmedan.org
+docker run --rm -p 3000:3000 secil-web
+```
+
+### Studio (`studio/Dockerfile`)
+
+Builds the Studio SPA and serves it with nginx (SPA fallback). Listens on **port 80**.
+`SANITY_STUDIO_*` are inlined at build time — set them as **build args**:
+
+| Build arg | Example |
+|---|---|
+| `SANITY_STUDIO_PROJECT_ID` | your Sanity project id |
+| `SANITY_STUDIO_DATASET` | `production` |
+
+```bash
+docker build -t secil-studio ./studio \
+  --build-arg SANITY_STUDIO_PROJECT_ID=xxxx --build-arg SANITY_STUDIO_DATASET=production
+docker run --rm -p 8080:80 secil-studio
+```
+
+> Rebuild the image whenever these values change — because they are baked into the
+> bundle at build time, they cannot be overridden at runtime.
 
 ## Known placeholders & next steps
 
