@@ -21,6 +21,11 @@ build/
 docs/brainstorms/
 docs/plans/
 
+# Local tooling / agent artifacts
+.agents/
+.claude/
+skills-lock.json
+
 # Logs & OS
 *.log
 npm-debug.log*
