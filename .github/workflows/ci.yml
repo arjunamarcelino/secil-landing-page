@@ -39,11 +39,10 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Typecheck
-        run: pnpm typecheck
-
       - name: Build
-        # No Sanity credentials in CI → the site builds against local fallback content.
+        # `next build` also runs TypeScript checking (and generates next-env.d.ts,
+        # which provides the static-image module types). No Sanity credentials in CI
+        # → the site builds against local fallback content.
         run: pnpm build
 
   studio:
