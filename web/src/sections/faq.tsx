@@ -10,7 +10,7 @@ export function Faq({ items }: { items: readonly FaqItem[] }) {
 
   return (
     <section id="faq" aria-labelledby="faq-heading" className="py-16 sm:py-20">
-      <Container className="flex flex-col gap-10">
+      <Container className="reveal flex flex-col gap-10">
         <SectionHeading
           id="faq-heading"
           eyebrow="FAQ"

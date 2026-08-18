@@ -9,7 +9,7 @@ export function Galeri({ photos }: { photos: readonly GalleryPhoto[] }) {
 
   return (
     <section id="galeri" aria-labelledby="galeri-heading" className="py-16 sm:py-20">
-      <Container className="flex flex-col gap-10">
+      <Container className="reveal flex flex-col gap-10">
         <SectionHeading
           id="galeri-heading"
           eyebrow="Galeri Kegiatan"

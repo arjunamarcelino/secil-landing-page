@@ -11,7 +11,7 @@ export function LatestStories({ articles }: { articles: readonly Article[] }) {
 
   return (
     <section id="cerita" aria-labelledby="stories-heading" className="bg-surface-sunken py-16 sm:py-20">
-      <Container className="flex flex-col gap-10">
+      <Container className="reveal flex flex-col gap-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             id="stories-heading"

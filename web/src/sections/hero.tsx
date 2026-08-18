@@ -20,7 +20,7 @@ export function Hero({ topStat }: { topStat?: ImpactStatistic }) {
       }}
     >
       <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-        <div className="flex flex-col gap-6">
+        <div className="hero-stagger flex flex-col gap-6">
           <span className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
             Organisasi nirlaba pendidikan sosial · Medan
           </span>
@@ -54,7 +54,7 @@ export function Hero({ topStat }: { topStat?: ImpactStatistic }) {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="hero-image-in relative">
           <ResponsiveImage
             image={heroImage}
             ratio="4 / 3"

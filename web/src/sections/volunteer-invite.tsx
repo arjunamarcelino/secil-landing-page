@@ -18,7 +18,7 @@ export function VolunteerInvite({
 }) {
   return (
     <section id="relawan" aria-labelledby="volunteer-heading" className="py-16 sm:py-20">
-      <Container className="grid items-center gap-10 md:grid-cols-2">
+      <Container className="reveal grid items-center gap-10 md:grid-cols-2">
         <ResponsiveImage
           image={volunteerImage}
           ratio="4 / 3"

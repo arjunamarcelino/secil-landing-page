@@ -7,7 +7,7 @@ export function ImpactSummary({ statistics }: { statistics: readonly ImpactStati
 
   return (
     <section id="dampak" aria-labelledby="impact-heading" className="py-16 sm:py-20">
-      <Container className="flex flex-col gap-10">
+      <Container className="reveal flex flex-col gap-10">
         <div className="flex flex-col gap-3">
           <span className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
             Dampak Bersama

@@ -7,7 +7,7 @@ export function Partners({ partners }: { partners: readonly Partner[] }) {
 
   return (
     <section aria-labelledby="partners-heading" className="border-y border-border bg-surface-sunken py-14">
-      <Container className="flex flex-col items-center gap-8">
+      <Container className="reveal flex flex-col items-center gap-8">
         <h2
           id="partners-heading"
           className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground"

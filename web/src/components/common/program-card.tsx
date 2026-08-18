@@ -33,7 +33,7 @@ export function ProgramCard({
   return (
     <article
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition-shadow hover:shadow-md",
+        "lift group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm hover:shadow-md",
         featured && "sm:flex-row",
       )}
     >

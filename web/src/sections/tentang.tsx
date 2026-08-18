@@ -10,7 +10,7 @@ const values = [
 export function Tentang({ description }: { description: string }) {
   return (
     <section id="tentang" aria-labelledby="tentang-heading" className="py-16 sm:py-20">
-      <Container className="flex flex-col gap-12">
+      <Container className="reveal flex flex-col gap-12">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <h2
             id="tentang-heading"

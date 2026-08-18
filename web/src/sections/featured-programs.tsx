@@ -10,7 +10,7 @@ export function FeaturedPrograms({ programs }: { programs: readonly Program[] })
 
   return (
     <section id="program" aria-labelledby="programs-heading" className="bg-surface-sunken py-16 sm:py-20">
-      <Container className="flex flex-col gap-10">
+      <Container className="reveal flex flex-col gap-10">
         <SectionHeading
           id="programs-heading"
           eyebrow="Program Kami"
