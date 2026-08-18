@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Theme tokens for Senyum Kecil Medan.
+  Two-step warm palette (WCAG-AA verified): deep tones carry text/UI,
+  bright tones are decorative / large-display only. Change colors here only.
+*/
+@theme inline {
+  /* surfaces & neutrals (mapped onto shadcn's semantic token names) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+
+  /* brand — terracotta */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-bright: var(--primary-bright);
+  --color-primary-tint: var(--primary-tint);
+
+  /* brand — teal */
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+  --color-teal-bright: var(--teal-bright);
+  --color-teal-tint: var(--teal-tint);
+
+  /* typography */
+  --font-sans: var(--font-body);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-display);
+  --font-display: var(--font-display);
+
+  /* radius scale */
+  --radius-sm: calc(var(--radius) * 0.66);
+  --radius-md: calc(var(--radius) * 0.83);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.6);
+  --radius-2xl: calc(var(--radius) * 2.4);
+}
+
+:root {
+  /* surfaces — warm, layered, never pure white */
+  --background: #faf7f2; /* cream page */
+  --surface: #fffdfb; /* raised card */
+  --surface-sunken: #f1ece4; /* alternating band */
+  --foreground: #2b2622; /* espresso — 14.0:1 on cream */
+  --muted: #f1ece4;
+  --muted-foreground: #6b5f54; /* 5.8:1 — AA body */
+  --secondary: #f1ece4;
+  --secondary-foreground: #2b2622;
+  --card: #fffdfb;
+  --card-foreground: #2b2622;
+  --popover: #fffdfb;
+  --popover-foreground: #2b2622;
+  --border: #e3d9cc;
+  --border-strong: #d8cbb8;
+  --input: #e3d9cc;
+
+  /* shadcn hover/accent neutral (kept subtle, NOT the brand teal) */
+  --accent: #f1ece4;
+  --accent-foreground: #2b2622;
+
+  /* terracotta — two-step */
+  --primary: #b8461a; /* interactive; white label = 5.34:1 AA */
+  --primary-foreground: #ffffff;
+  --primary-hover: #a03e16;
+  --primary-bright: #e86a33; /* DECORATIVE / large only */
+  --primary-tint: #fbede4;
+
+  /* teal — two-step */
+  --teal: #1f7a6f; /* interactive/link; white = 5.16:1 AA */
+  --teal-foreground: #ffffff;
+  --teal-bright: #2a9d8f; /* decorative */
+  --teal-tint: #e4f1ee;
+
+  /* states */
+  --destructive: #b4231f;
+  --ring: #b8461a;
+
+  --radius: 0.75rem;
+
+  /* rhythm & warm-tinted shadows (browns, not blue-black) */
+  --measure: 42rem;
+  --shadow-sm: 0 1px 2px rgba(74, 45, 24, 0.06);
+  --shadow-md: 0 6px 20px -8px rgba(74, 45, 24, 0.14);
+  --shadow-lg: 0 20px 48px -16px rgba(74, 45, 24, 0.2);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Visible, high-contrast focus ring on every interactive element */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Respect reduced-motion preference for the light CSS transitions we use */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

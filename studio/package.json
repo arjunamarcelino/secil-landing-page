@@ -1,0 +1,26 @@
+{
+  "name": "senyum-kecil-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sanity Studio for Senyum Kecil Medan",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sanity/vision": "^6.9.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "^6.9.2",
+    "styled-components": "^6.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}
