@@ -5,9 +5,10 @@ export const siteSettings = {
   description:
     "Organisasi nirlaba pendidikan sosial yang berfokus pada mengajar dan berbagi bagi anak-anak. Berdiri di Medan sejak 2020, kami percaya setiap anak berhak belajar, bermain, dan bermimpi—dimulai dari Sumatera Utara.",
   contact: {
-    email: "halo@senyumkecilmedan.org",
-    phone: "+62 812-0000-0000",
-    address: "Medan, Sumatera Utara, Indonesia",
+    email: "senyumkecil.contact.us@gmail.com",
+    phone: "0853 3488 6355",
+    address:
+      "Jl. Gatot Subroto, Gg. Harapan No.3, Sei Sikambing C. II, Kec. Medan Helvetia, Kota Medan, Sumatera Utara 20118",
   },
   socialLinks: [
     { platform: "Instagram", url: "https://www.instagram.com/senyumkecil.mdn/" },

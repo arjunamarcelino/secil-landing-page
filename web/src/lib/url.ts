@@ -25,3 +25,14 @@ export function safeHref(raw?: string | null): string | undefined {
 export function isExternalHref(href: string): boolean {
   return /^https?:\/\//i.test(href);
 }
+
+/** Build a WhatsApp chat link from an Indonesian phone number (0xxx → 62xxx). */
+export function whatsappLink(phone: string): string {
+  const digits = phone.replace(/\D/g, "").replace(/^0/, "62");
+  return `https://wa.me/${digits}`;
+}
+
+/** Build a Google Maps search link for an address. */
+export function mapsLink(query: string): string {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}

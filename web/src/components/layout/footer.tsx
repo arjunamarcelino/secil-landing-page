@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/common/container";
 import { ExternalLink } from "@/components/common/external-link";
 import { socialIcon } from "@/components/common/icons";
+import { whatsappLink, mapsLink } from "@/lib/url";
 import { NAV_ITEMS } from "@/lib/site";
 import type { SiteSettings } from "@/content/types";
 
@@ -41,22 +42,37 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div className="flex flex-col gap-2">
           <p className="text-sm font-semibold text-foreground">Kontak</p>
           {settings.contact.email && (
-            <span className="flex items-center gap-2 text-sm text-muted-foreground">
+            <a
+              href={`mailto:${settings.contact.email}`}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+            >
               <Mail className="size-4 shrink-0" aria-hidden />
               {settings.contact.email}
-            </span>
+            </a>
           )}
           {settings.contact.phone && (
-            <span className="flex items-center gap-2 text-sm text-muted-foreground">
+            <a
+              href={whatsappLink(settings.contact.phone)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Hubungi ${settings.orgName} via WhatsApp`}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+            >
               <Phone className="size-4 shrink-0" aria-hidden />
               {settings.contact.phone}
-            </span>
+            </a>
           )}
           {settings.contact.address && (
-            <span className="flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="size-4 shrink-0" aria-hidden />
+            <a
+              href={mapsLink(settings.contact.address)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buka lokasi di Google Maps"
+              className="flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground"
+            >
+              <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
               {settings.contact.address}
-            </span>
+            </a>
           )}
         </div>
 
