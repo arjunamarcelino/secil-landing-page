@@ -1,28 +1,23 @@
 import type { ImpactStatistic } from "@/content/types";
 
+// Only facts we can state with confidence — replace/extend in Sanity later.
 export const statistics = [
   {
-    label: "Anak terdampak",
-    value: "1.200+",
-    description: "Anak yang mengikuti kelas belajar dan kegiatan komunitas sejak 2021.",
+    label: "Titik lokasi kegiatan",
+    value: "25+",
+    description: "Kegiatan Senyum Kecil telah terlaksana di lebih dari 25 titik lokasi.",
     order: 1,
   },
   {
-    label: "Relawan aktif",
-    value: "85",
-    description: "Relawan yang rutin mendampingi kegiatan setiap pekan.",
+    label: "Berdiri sejak",
+    value: "2020",
+    description: "Lahir pada 7 Agustus 2020 di Kota Medan, Sumatera Utara.",
     order: 2,
   },
   {
-    label: "Titik kegiatan",
-    value: "12",
-    description: "Lokasi belajar dan bermain yang tersebar di sekitar Kota Medan.",
+    label: "Program utama",
+    value: "4",
+    description: "Senyum Mengajar, Senyum Pendidikan, Senyum Berbagi, dan Senyum Rekreasi.",
     order: 3,
-  },
-  {
-    label: "Buku dibagikan",
-    value: "3.400",
-    description: "Buku bacaan anak yang disalurkan melalui taman baca keliling.",
-    order: 4,
   },
 ] as const satisfies readonly ImpactStatistic[];

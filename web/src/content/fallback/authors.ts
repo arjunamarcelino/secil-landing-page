@@ -6,7 +6,7 @@ export const authors = {
     name: "Ratna Sari",
     role: "Koordinator Program",
     photo: local(img.author1, "Foto profil Ratna Sari, Koordinator Program Senyum Kecil"),
-    bio: "Ratna memimpin program belajar dan bermain untuk anak-anak di kawasan pesisir Medan sejak 2021.",
+    bio: "Ratna mengoordinasikan program Senyum Mengajar dan pendampingan anak-anak bersama tim pengajar Senyum Kecil.",
   },
   dimas: {
     name: "Dimas Prayoga",

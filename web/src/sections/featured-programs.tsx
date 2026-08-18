@@ -14,8 +14,8 @@ export function FeaturedPrograms({ programs }: { programs: readonly Program[] })
         <SectionHeading
           id="programs-heading"
           eyebrow="Program Kami"
-          title="Kegiatan yang sedang kami jalankan"
-          description="Setiap program dirancang untuk membuka kesempatan belajar dan bermain bagi anak-anak Medan."
+          title="Empat program, satu tujuan"
+          description="Berfokus pada mengajar dan berbagi, program-program kami dirancang oleh tim terbaik di bidangnya."
         />
 
         {programs.length === 0 ? (

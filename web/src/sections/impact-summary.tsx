@@ -19,7 +19,7 @@ export function ImpactSummary({ statistics }: { statistics: readonly ImpactStati
             Setiap dukungan berubah menjadi kesempatan belajar
           </h2>
         </div>
-        <div className="grid gap-8 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 border-t border-border pt-10 sm:grid-cols-3">
           {statistics.map((stat) => (
             <ImpactStat key={stat.label} stat={stat} />
           ))}

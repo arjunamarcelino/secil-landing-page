@@ -3,9 +3,9 @@ import { Container } from "@/components/common/container";
 import type { SiteSettings } from "@/content/types";
 
 const impactPoints = [
-  "Rp50.000 — satu paket buku bacaan untuk taman baca keliling.",
-  "Rp150.000 — perlengkapan belajar untuk satu kelas mingguan.",
-  "Rp500.000 — mendukung satu titik kegiatan selama sebulan.",
+  "Sandang & pangan — disalurkan langsung kepada teman-teman yang membutuhkan.",
+  "Donasi uang — dibelanjakan menjadi paket makanan, dibagikan tiap Jumat di jalanan Medan.",
+  "Dukungan program — membantu Senyum Mengajar, Pendidikan, dan Rekreasi terus berjalan.",
 ];
 
 export function Donasi({ donation }: { donation: SiteSettings["donation"] }) {
@@ -21,8 +21,9 @@ export function Donasi({ donation }: { donation: SiteSettings["donation"] }) {
               Dukung senyum mereka
             </h2>
             <p className="text-lg leading-relaxed text-primary-foreground/90">
-              Setiap kontribusi—sekecil apa pun—menjadi kesempatan belajar bagi anak-anak
-              Medan. Donasi dapat disalurkan melalui transfer bank ke rekening resmi kami.
+              Melalui Senyum Berbagi, kami mengumpulkan donasi materi—sandang, pangan, dan
+              uang—setiap bulan untuk mereka yang membutuhkan. Donasi uang dapat disalurkan
+              melalui transfer bank ke rekening resmi kami.
             </p>
             <ul className="flex flex-col gap-2">
               {impactPoints.map((point) => (

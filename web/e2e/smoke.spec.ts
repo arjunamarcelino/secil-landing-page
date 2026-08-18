@@ -7,9 +7,9 @@ import { test, expect } from "@playwright/test";
 const routes: ReadonlyArray<{ path: string; heading: RegExp }> = [
   { path: "/", heading: /berhak/i },
   { path: "/cerita", heading: /kisah dan laporan/i },
-  { path: "/cerita/cerita-kecil-dari-kelas-baca", heading: /kelas baca/i },
-  { path: "/cerita/laporan-bulan-buku-ceria-2026", heading: /bulan buku ceria/i },
-  { path: "/program/kelas-baca-ceria", heading: /kelas baca ceria/i },
+  { path: "/cerita/sehari-bersama-senyum-mengajar", heading: /senyum mengajar/i },
+  { path: "/cerita/laporan-senyum-mengajar-jangka-panjang", heading: /laporan/i },
+  { path: "/program/senyum-mengajar", heading: /senyum mengajar/i },
 ];
 
 for (const route of routes) {

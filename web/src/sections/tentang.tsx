@@ -20,10 +20,16 @@ export function Tentang({ description }: { description: string }) {
           <div className="flex flex-col gap-4 text-lg leading-relaxed text-muted-foreground">
             <p>{description}</p>
             <p>
-              Berawal dari sekelompok relawan yang mengajar di akhir pekan, Senyum Kecil
-              tumbuh menjadi komunitas yang menjangkau ribuan anak di berbagai penjuru Kota
-              Medan. Kami berjalan bersama warga, guru, dan mitra yang percaya bahwa
-              pendidikan adalah hak setiap anak.
+              Senyum Kecil lahir pada 7 Agustus 2020 di Medan, digagas oleh empat sahabat
+              yang prihatin terhadap kurang maksimalnya kondisi pendidikan di masa pandemi.
+              Berbekal keprihatinan itu, mereka mulai bergerak dan mengajak teman-teman
+              untuk memperluas akses bantuan pendidikan bagi anak-anak.
+            </p>
+            <p>
+              Dengan fokus mengajar dan berbagi, program-program kami kini telah terlaksana
+              di lebih dari 25 titik lokasi. Kami hadir dengan komitmen untuk terus
+              mewujudkan pendidikan yang lebih baik bagi anak-anak Indonesia, dimulai dari
+              Sumatera Utara.
             </p>
           </div>
         </div>

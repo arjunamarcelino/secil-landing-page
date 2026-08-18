@@ -6,113 +6,112 @@ import { categories } from "./categories";
 
 export const articles: readonly Article[] = [
   {
-    title: "Cerita Kecil dari Kelas Baca di Tepi Pantai",
-    slug: "cerita-kecil-dari-kelas-baca",
+    title: "Sehari Penuh Senyum Bersama Senyum Mengajar",
+    slug: "sehari-bersama-senyum-mengajar",
     excerpt:
-      "Setiap Sabtu pagi, tawa anak-anak memenuhi ruang belajar sederhana kami. Berikut sepenggal kisahnya.",
-    coverImage: local(img.story1, "Anak-anak tersenyum saat mengikuti kelas baca di tepi pantai"),
+      "Dalam satu hari kegiatan Senyum Mengajar, teori berubah menjadi praktik—dan tawa anak-anak memenuhi ruang belajar.",
+    coverImage: local(img.story1, "Anak-anak antusias mengikuti kegiatan Senyum Mengajar"),
     content: [
       block(
-        "Matahari belum terlalu tinggi ketika anak-anak mulai berdatangan. Mereka membawa semangat, meski sebagian datang tanpa alas kaki.",
+        "Pagi itu, anak-anak berdatangan dengan semangat. Kegiatan Senyum Mengajar Jangka Pendek hari itu menargetkan satu hasil sederhana: memahami sebuah materi dan langsung mempraktikkannya.",
       ),
-      block("Belajar sambil bermain", "h2"),
+      block("Belajar yang langsung terasa", "h2"),
       block(
-        "Di Senyum Kecil, kami percaya bahwa belajar paling melekat ketika anak merasa senang. Maka setiap kelas selalu diselingi permainan, lagu, dan cerita.",
+        "Di Senyum Kecil, kami percaya pembelajaran paling melekat ketika anak bisa langsung menerapkannya. Maka setiap sesi selalu ditutup dengan praktik—menggambar, bercerita ulang, atau membuat karya sederhana.",
       ),
       block(
-        "Hari itu, seorang anak bernama Ada untuk pertama kalinya berhasil membaca satu paragraf penuh. Wajahnya berbinar, dan itu cukup untuk membuat kami semua ikut bahagia.",
+        "Hari itu, seorang anak untuk pertama kalinya berani maju dan menjelaskan hasil karyanya di depan teman-temannya. Wajahnya berbinar, dan itu cukup membuat kami semua ikut bahagia.",
       ),
     ],
     author: authors.ratna,
     categories: [categories.pendidikan, categories.komunitas],
     publishedAt: "2026-07-20",
     featured: true,
-    seoTitle: "Cerita Kecil dari Kelas Baca di Tepi Pantai — Senyum Kecil Medan",
+    seoTitle: "Sehari Bersama Senyum Mengajar — Senyum Kecil",
     seoDescription:
-      "Sepenggal kisah dari kelas baca mingguan Senyum Kecil untuk anak-anak di kawasan pesisir Medan.",
+      "Cerita dari kegiatan Senyum Mengajar Senyum Kecil, tempat teori berubah menjadi praktik bersama anak-anak.",
   },
   {
-    title: "Mengapa Taman Baca Keliling Penting untuk Kampung Kami",
-    slug: "taman-baca-keliling-penting",
+    title: "Jumat Berbagi: Menyalurkan Kebaikan di Jalanan Medan",
+    slug: "jumat-berbagi-di-jalanan-medan",
     excerpt:
-      "Akses terhadap buku bukan hal yang merata. Taman Baca Keliling hadir untuk mendekatkan bacaan ke anak-anak.",
-    coverImage: local(img.story2, "Anak-anak mengelilingi kendaraan taman baca keliling"),
+      "Setiap bulan, donasi yang terkumpul berubah menjadi paket makanan yang dibagikan pada hari Jumat di jalanan Kota Medan.",
+    coverImage: local(img.story2, "Relawan Senyum Kecil membagikan donasi di jalanan Medan"),
     content: [
       block(
-        "Tidak semua kampung memiliki perpustakaan. Bahkan buku bacaan anak pun kadang sulit ditemukan. Dari sinilah gagasan Taman Baca Keliling lahir.",
+        "Senyum Berbagi mengumpulkan donasi materi sebulan sekali—berupa sandang, pangan, dan uang. Donasi uang kami belanjakan menjadi produk makanan yang siap dibagikan.",
       ),
       block(
-        "Dengan membawa buku langsung ke tengah kampung, kami melihat anak-anak yang semula ragu perlahan jatuh cinta pada membaca.",
+        "Pada hari Jumat, bersama donasi makanan basah, paket-paket itu kami bagikan kepada teman-teman di jalanan Kota Medan. Sederhana, namun kami percaya kepedulian kecil bisa berarti besar.",
       ),
     ],
     author: authors.dimas,
-    categories: [categories.pendidikan],
+    categories: [categories.komunitas],
     publishedAt: "2026-05-11",
     featured: false,
   },
   {
-    title: "Menjadi Relawan: Memberi Sedikit, Menerima Banyak",
-    slug: "menjadi-relawan-memberi-sedikit",
+    title: "Belajar Seru di Luar Ruangan Bersama Senyum Rekreasi",
+    slug: "belajar-seru-bersama-senyum-rekreasi",
     excerpt:
-      "Para relawan sering berkata bahwa merekalah yang justru paling banyak belajar. Ini alasannya.",
-    coverImage: local(img.story3, "Relawan bersama anak-anak seusai kegiatan komunitas"),
+      "Mengajak anak-anak belajar di tempat edukatif dan bersejarah, agar rasa ingin tahu tumbuh dengan cara yang menyenangkan.",
+    coverImage: local(img.story3, "Anak-anak belajar sambil bermain di luar ruangan"),
     content: [
       block(
-        "Menjadi relawan di Senyum Kecil tidak menuntut keahlian khusus. Yang dibutuhkan hanyalah kesediaan hadir dan mendampingi.",
+        "Tidak semua pelajaran harus terjadi di dalam kelas. Melalui Senyum Rekreasi, kami mengajak anak-anak belajar di tempat-tempat yang punya unsur edukasi dan nilai sejarah.",
       ),
       block(
-        "Banyak relawan mengaku pulang dengan hati yang lebih penuh. Sebab di setiap senyum anak, ada pelajaran tentang ketulusan.",
+        "Di luar ruangan, anak-anak tampak lebih antusias. Mereka bertanya, mengamati, dan tertawa—belajar terasa seperti bermain.",
       ),
     ],
     author: authors.dimas,
-    categories: [categories.relawan, categories.komunitas],
+    categories: [categories.relawan, categories.pendidikan],
     publishedAt: "2026-03-02",
     featured: false,
   },
   {
-    title: "Laporan Kegiatan: Bulan Buku Ceria 2026",
-    slug: "laporan-bulan-buku-ceria-2026",
+    title: "Laporan Kegiatan: Senyum Mengajar Jangka Panjang",
+    slug: "laporan-senyum-mengajar-jangka-panjang",
     excerpt:
-      "Rekap kegiatan Bulan Buku Ceria: jumlah anak yang terlibat, buku yang tersalurkan, dan penggunaan donasi.",
-    coverImage: local(img.gallery3, "Kegiatan Bulan Buku Ceria bersama anak-anak"),
+      "Rekap perjalanan satu periode Senyum Mengajar Jangka Panjang: pencapaian belajar anak dan pendampingan tim pengajar.",
+    coverImage: local(img.gallery3, "Kegiatan Senyum Mengajar Jangka Panjang"),
     content: [
       block(
-        "Bulan Buku Ceria adalah rangkaian kegiatan membaca selama satu bulan penuh yang digelar di 12 titik kegiatan. Berikut rekap singkatnya.",
+        "Selama kurang lebih tiga bulan, Senyum Mengajar Jangka Panjang berjalan konsisten dengan target ajar berdasarkan kurikulum Senyum Kecil.",
       ),
       block("Ringkasan capaian", "h2"),
       block(
-        "Sepanjang kegiatan, lebih dari 600 anak terlibat aktif dan sekitar 850 buku bacaan disalurkan melalui taman baca keliling. Kegiatan didukung oleh 40 relawan dari berbagai latar belakang.",
+        "Anak-anak menyelesaikan topik pembelajaran secara bertahap dengan pendampingan tim pengajar di setiap pertemuan. Kehadiran meningkat dan antusiasme tetap terjaga hingga akhir periode.",
       ),
-      block("Penggunaan dukungan", "h2"),
       block(
-        "Donasi yang terkumpul digunakan untuk pengadaan buku, perlengkapan belajar, dan biaya operasional taman baca keliling. Laporan keuangan lengkap dapat diminta melalui surel kami.",
+        "Laporan lengkap dan dokumentasi kegiatan dapat diminta melalui surel kami.",
       ),
     ],
     author: authors.ratna,
-    categories: [categories.laporan],
+    categories: [categories.laporan, categories.pendidikan],
     publishedAt: "2026-06-05",
     featured: false,
   },
   {
-    title: "Laporan Kegiatan: Kelas Belajar Semester Ganjil",
-    slug: "laporan-kelas-belajar-semester-ganjil",
+    title: "Laporan Kegiatan: Senyum Berbagi Bulan Ini",
+    slug: "laporan-senyum-berbagi-bulanan",
     excerpt:
-      "Rangkuman jalannya kelas belajar mingguan pada semester ganjil beserta perkembangan anak-anak.",
-    coverImage: local(img.gallery1, "Kelas belajar mingguan pada semester ganjil"),
+      "Rekap penggalangan dan penyaluran donasi Senyum Berbagi: sandang, pangan, dan uang yang telah dibagikan.",
+    coverImage: local(img.gallery1, "Penyaluran donasi program Senyum Berbagi"),
     content: [
       block(
-        "Selama semester ganjil, kelas belajar mingguan berjalan konsisten di sembilan titik. Kehadiran anak-anak meningkat dibanding periode sebelumnya.",
+        "Pada periode ini, Senyum Berbagi kembali mengumpulkan donasi sandang, pangan, dan uang dari para donatur.",
       ),
       block(
-        "Kami mencatat kemajuan membaca pada sebagian besar peserta, serta antusiasme yang tinggi pada sesi bercerita dan menggambar.",
+        "Donasi uang dibelanjakan menjadi produk makanan dan dibagikan pada hari Jumat di jalanan Kota Medan. Donasi materi yang dapat disimpan disalurkan melalui program Senyum Kecil lainnya. Terima kasih untuk setiap kebaikan yang telah dititipkan.",
       ),
     ],
     author: authors.dimas,
-    categories: [categories.laporan, categories.pendidikan],
+    categories: [categories.laporan, categories.komunitas],
     publishedAt: "2026-01-18",
     featured: false,
   },
 ] as const;
 
 /** Pinned slug guaranteed to exist in fallback data — used by the smoke test. */
-export const PINNED_ARTICLE_SLUG = "cerita-kecil-dari-kelas-baca" as const;
+export const PINNED_ARTICLE_SLUG = "sehari-bersama-senyum-mengajar" as const;

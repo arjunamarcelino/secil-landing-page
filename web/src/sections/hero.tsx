@@ -22,7 +22,7 @@ export function Hero({ topStat }: { topStat?: ImpactStatistic }) {
       <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
         <div className="flex flex-col gap-6">
           <span className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
-            Komunitas untuk anak-anak Medan
+            Organisasi nirlaba pendidikan sosial · Medan
           </span>
           <h1
             id="hero-heading"
@@ -39,9 +39,10 @@ export function Hero({ topStat }: { topStat?: ImpactStatistic }) {
             dan tersenyum.
           </h1>
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Senyum Kecil Medan mendampingi pendidikan dan tumbuh kembang anak melalui
-            kelas belajar, taman baca, dan kegiatan bersama relawan. Bergeraklah bersama
-            kami untuk menghadirkan lebih banyak senyum.
+            Senyum Kecil bergerak untuk mengajar dan berbagi bagi anak-anak melalui
+            program Senyum Mengajar, Pendidikan, Berbagi, dan Rekreasi. Berdiri sejak 2020,
+            kami terus berusaha mewujudkan pendidikan yang lebih baik—dimulai dari
+            Sumatera Utara.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/#donasi" variant="primary" size="lg">

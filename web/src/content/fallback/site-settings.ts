@@ -1,9 +1,9 @@
 import type { SiteSettings } from "@/content/types";
 
 export const siteSettings = {
-  orgName: "Senyum Kecil Medan",
+  orgName: "Senyum Kecil",
   description:
-    "Komunitas sosial untuk pendidikan dan tumbuh kembang anak-anak di Kota Medan. Kami percaya setiap anak berhak belajar, bermain, dan bermimpi.",
+    "Organisasi nirlaba pendidikan sosial yang berfokus pada mengajar dan berbagi bagi anak-anak. Berdiri di Medan sejak 2020, kami percaya setiap anak berhak belajar, bermain, dan bermimpi—dimulai dari Sumatera Utara.",
   contact: {
     email: "halo@senyumkecilmedan.org",
     phone: "+62 812-0000-0000",
@@ -19,8 +19,8 @@ export const siteSettings = {
     note: "Cantumkan nama dan pesan Anda saat berdonasi agar kami dapat mengirim ucapan terima kasih.",
   },
   defaultSeo: {
-    title: "Senyum Kecil Medan — Pendidikan & Harapan untuk Anak Medan",
+    title: "Senyum Kecil — Mengajar & Berbagi untuk Anak Indonesia",
     description:
-      "Komunitas sosial yang mendampingi pendidikan anak-anak di Medan melalui kelas belajar, taman baca, dan kegiatan bersama relawan.",
+      "Organisasi nirlaba pendidikan sosial di Medan. Kami mengajar dan berbagi melalui program Senyum Mengajar, Senyum Pendidikan, Senyum Berbagi, dan Senyum Rekreasi.",
   },
 } as const satisfies SiteSettings;

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Senyum Kecil Medan — Pendidikan & harapan untuk anak Medan";
+export const alt = "Senyum Kecil — Mengajar & berbagi untuk anak Indonesia";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -37,7 +37,7 @@ export default function OpengraphImage() {
             S
           </div>
           <span style={{ fontSize: 30, fontWeight: 700, color: "#2B2622" }}>
-            Senyum Kecil Medan
+            Senyum Kecil
           </span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -47,7 +47,7 @@ export default function OpengraphImage() {
             dan tersenyum.
           </span>
           <span style={{ fontSize: 30, color: "#6B5F54" }}>
-            Pendidikan & harapan untuk anak-anak Medan
+            Mengajar & berbagi untuk anak Indonesia
           </span>
         </div>
       </div>
