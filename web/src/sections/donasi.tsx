@@ -12,7 +12,7 @@ export function Donasi({ donation }: { donation: SiteSettings["donation"] }) {
   return (
     <section id="donasi" aria-labelledby="donasi-heading" className="py-16 sm:py-20">
       <Container>
-        <div className="grid gap-10 rounded-3xl bg-primary p-8 text-primary-foreground sm:p-12 lg:grid-cols-2">
+        <div className="grid gap-10 rounded-3xl bg-primary p-8 text-primary-foreground sm:p-12 md:grid-cols-2">
           <div className="flex flex-col gap-5">
             <span className="text-sm font-semibold uppercase tracking-[0.12em] text-primary-foreground/80">
               Donasi

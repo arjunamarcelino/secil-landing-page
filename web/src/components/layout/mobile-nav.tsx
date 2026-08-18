@@ -24,7 +24,7 @@ export function MobileNav() {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger
         aria-label="Buka menu navigasi"
-        className="inline-flex size-11 items-center justify-center rounded-xl border border-border-strong bg-surface text-foreground md:hidden"
+        className="inline-flex size-11 items-center justify-center rounded-xl border border-border-strong bg-surface text-foreground lg:hidden"
       >
         <Menu className="size-5" />
       </SheetTrigger>

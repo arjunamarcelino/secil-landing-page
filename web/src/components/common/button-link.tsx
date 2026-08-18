@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { safeHref, isExternalHref } from "@/lib/url";
 
 const buttonLinkVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none",
   {
     variants: {
       variant: {
