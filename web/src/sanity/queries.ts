@@ -88,3 +88,9 @@ export const teamMembersQuery = defineQuery(
 export const faqQuery = defineQuery(
   `*[_type == "faq"] | order(order asc){ question, answer, order }`,
 );
+
+export const galleryQuery = defineQuery(
+  `*[_type == "galleryPhoto"] | order(order asc){
+    caption, order, "image": image${imageProjection}
+  }`,
+);

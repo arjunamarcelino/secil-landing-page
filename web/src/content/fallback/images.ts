@@ -17,6 +17,13 @@ import partner1 from "@/assets/placeholders/partner-1.png";
 import partner2 from "@/assets/placeholders/partner-2.png";
 import partner3 from "@/assets/placeholders/partner-3.png";
 import partner4 from "@/assets/placeholders/partner-4.png";
+import event1 from "@/assets/placeholders/event-1.png";
+import event2 from "@/assets/placeholders/event-2.png";
+import event3 from "@/assets/placeholders/event-3.png";
+import event4 from "@/assets/placeholders/event-4.png";
+import event5 from "@/assets/placeholders/event-5.png";
+import event6 from "@/assets/placeholders/event-6.png";
+import eventWide from "@/assets/placeholders/event-wide.png";
 
 /** Wrap a bundled asset as a local DomainImage (never an empty `src`). */
 export function local(asset: StaticImageData, alt: string): DomainImage {
@@ -40,4 +47,11 @@ export const img = {
   partner2,
   partner3,
   partner4,
+  event1,
+  event2,
+  event3,
+  event4,
+  event5,
+  event6,
+  eventWide,
 } as const;

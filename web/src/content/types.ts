@@ -127,6 +127,12 @@ export interface FaqItem {
   readonly order: number;
 }
 
+export interface GalleryPhoto {
+  readonly image: DomainImage;
+  readonly caption?: string;
+  readonly order: number;
+}
+
 export interface SocialLink {
   readonly platform: string;
   readonly url: string;

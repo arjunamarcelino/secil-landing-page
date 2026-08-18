@@ -11,6 +11,7 @@ import type {
   ImpactStatistic,
   Partner,
   FaqItem,
+  GalleryPhoto,
   Program,
   ProgramStatus,
   RichText,
@@ -26,6 +27,7 @@ import { statistics } from "./fallback/statistics";
 import { partners } from "./fallback/partners";
 import { team } from "./fallback/team";
 import { faq } from "./fallback/faq";
+import { gallery } from "./fallback/gallery";
 
 /*
   The seam. Each function returns local fallback content when Sanity is not
@@ -212,4 +214,14 @@ export async function getTeamMembers(): Promise<readonly TeamMember[]> {
 export async function getFaq(): Promise<readonly FaqItem[]> {
   if (!isSanityConfigured) return faq;
   return sanityFetch<FaqItem[]>(q.faqQuery, {}, { tags: ["faq"] });
+}
+
+export async function getGallery(): Promise<readonly GalleryPhoto[]> {
+  if (!isSanityConfigured) return gallery;
+  const raw = await sanityFetch<{ caption?: string; order: number; image: RawImage }[]>(
+    q.galleryQuery,
+    {},
+    { tags: ["galleryPhoto"] },
+  );
+  return raw.map((g) => ({ caption: g.caption, order: g.order, image: toImage(g.image, g.caption ?? "Foto kegiatan") }));
 }
