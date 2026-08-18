@@ -1,5 +1,6 @@
 import {
   getAllPrograms,
+  getFaq,
   getImpactStatistics,
   getLatestArticles,
   getPartners,
@@ -13,6 +14,7 @@ import { ImpactSummary } from "@/sections/impact-summary";
 import { LatestStories } from "@/sections/latest-stories";
 import { VolunteerInvite } from "@/sections/volunteer-invite";
 import { Donasi } from "@/sections/donasi";
+import { Faq } from "@/sections/faq";
 import { Partners } from "@/sections/partners";
 import { JsonLd } from "@/components/common/json-ld";
 
@@ -20,12 +22,13 @@ export const dynamic = "error";
 export const revalidate = false;
 
 export default async function HomePage() {
-  const [settings, programs, statistics, articles, partners] = await Promise.all([
+  const [settings, programs, statistics, articles, partners, faqItems] = await Promise.all([
     getSiteSettings(),
     getAllPrograms(),
     getImpactStatistics(),
     getLatestArticles(3),
     getPartners(),
+    getFaq(),
   ]);
 
   const instagram = settings.socialLinks.find((s) => s.platform === "Instagram");
@@ -50,6 +53,7 @@ export default async function HomePage() {
       <LatestStories articles={articles} />
       <VolunteerInvite email={settings.contact.email} instagramUrl={instagram?.url} />
       <Donasi donation={settings.donation} />
+      <Faq items={faqItems} />
       <Partners partners={partners} />
     </>
   );

@@ -10,6 +10,7 @@ import type {
   DomainImage,
   ImpactStatistic,
   Partner,
+  FaqItem,
   Program,
   ProgramStatus,
   RichText,
@@ -24,6 +25,7 @@ import { articles } from "./fallback/articles";
 import { statistics } from "./fallback/statistics";
 import { partners } from "./fallback/partners";
 import { team } from "./fallback/team";
+import { faq } from "./fallback/faq";
 
 /*
   The seam. Each function returns local fallback content when Sanity is not
@@ -205,4 +207,9 @@ export async function getTeamMembers(): Promise<readonly TeamMember[]> {
     order: m.order,
     photo: m.photo?.ref ? toImage(m.photo, m.name) : undefined,
   }));
+}
+
+export async function getFaq(): Promise<readonly FaqItem[]> {
+  if (!isSanityConfigured) return faq;
+  return sanityFetch<FaqItem[]>(q.faqQuery, {}, { tags: ["faq"] });
 }

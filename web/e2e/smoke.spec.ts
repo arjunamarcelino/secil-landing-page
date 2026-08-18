@@ -24,7 +24,7 @@ for (const route of routes) {
 
 test("home page has all navigable section anchors", async ({ page }) => {
   await page.goto("/");
-  for (const id of ["tentang", "program", "cerita", "relawan", "donasi"]) {
+  for (const id of ["tentang", "program", "cerita", "relawan", "donasi", "faq"]) {
     await expect(page.locator(`#${id}`)).toBeAttached();
   }
 });

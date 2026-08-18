@@ -121,6 +121,12 @@ export interface TeamMember {
   readonly order: number;
 }
 
+export interface FaqItem {
+  readonly question: string;
+  readonly answer: RichText;
+  readonly order: number;
+}
+
 export interface SocialLink {
   readonly platform: string;
   readonly url: string;

@@ -20,4 +20,5 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("impactStatistic").title("Statistik Dampak"),
       S.documentTypeListItem("partner").title("Mitra"),
       S.documentTypeListItem("teamMember").title("Anggota Tim"),
+      S.documentTypeListItem("faq").title("FAQ"),
     ]);

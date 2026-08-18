@@ -9,6 +9,7 @@ export const NAV_ITEMS = [
   { href: "/#cerita", label: "Cerita" },
   { href: "/#relawan", label: "Relawan" },
   { href: "/#donasi", label: "Donasi" },
+  { href: "/#faq", label: "FAQ" },
 ] as const;
 
 /** Real routes (not anchors) for the sitemap. */
