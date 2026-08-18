@@ -11,7 +11,13 @@ export const siteSettings = {
   },
   socialLinks: [
     { platform: "Instagram", url: "https://www.instagram.com/senyumkecil.mdn/" },
+    { platform: "TikTok", url: "https://www.tiktok.com/@senyumkecil.mdn" },
+    { platform: "YouTube", url: "https://www.youtube.com/@senyumkecilmdn" },
   ],
+  hki: {
+    registrationNumber: "IDM001097863",
+    url: "https://merek.dgip.go.id/AdminMerek/validate/JID2022082321",
+  },
   donation: {
     bankName: "Bank Contoh Indonesia",
     accountNumber: "000-000-0000",

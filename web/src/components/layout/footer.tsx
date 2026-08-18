@@ -2,12 +2,11 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/common/container";
 import { ExternalLink } from "@/components/common/external-link";
-import { InstagramIcon } from "@/components/common/icons";
+import { socialIcon } from "@/components/common/icons";
 import { NAV_ITEMS } from "@/lib/site";
 import type { SiteSettings } from "@/content/types";
 
 export function Footer({ settings }: { settings: SiteSettings }) {
-  const instagram = settings.socialLinks.find((s) => s.platform === "Instagram");
   const year = new Date().getFullYear();
 
   return (
@@ -57,25 +56,45 @@ export function Footer({ settings }: { settings: SiteSettings }) {
 
         <div className="flex flex-col gap-2">
           <p className="text-sm font-semibold text-foreground">Ikuti Kami</p>
-          {instagram && (
-            <ExternalLink
-              href={instagram.url}
-              aria-label={`Instagram ${settings.orgName}`}
-              className="flex items-center gap-2 text-sm"
-            >
-              <InstagramIcon className="size-4 shrink-0" />
-              @senyumkecil.mdn
-            </ExternalLink>
-          )}
+          {settings.socialLinks.map((social) => {
+            const Icon = socialIcon(social.platform);
+            return (
+              <ExternalLink
+                key={social.platform}
+                href={social.url}
+                aria-label={`${social.platform} ${settings.orgName}`}
+                className="flex items-center gap-2 text-sm"
+              >
+                {Icon && <Icon className="size-4 shrink-0" />}
+                {social.platform}
+              </ExternalLink>
+            );
+          })}
         </div>
       </Container>
 
       <div className="border-t border-border">
-        <Container className="flex flex-col items-center justify-between gap-2 py-6 text-sm text-muted-foreground sm:flex-row">
+        <Container className="flex flex-col items-center justify-between gap-3 py-6 text-sm text-muted-foreground sm:flex-row">
           <p>
             © {year} {settings.orgName}. Dibuat dengan sepenuh hati.
           </p>
-          <p>Medan, Indonesia</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            {settings.hki && (
+              <>
+                <ExternalLink
+                  href={settings.hki.url}
+                  aria-label={`Validasi merek terdaftar ${settings.hki.registrationNumber} di DGIP`}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  Merek terdaftar · {settings.hki.registrationNumber}
+                </ExternalLink>
+                <span aria-hidden className="hidden sm:inline">
+                  ·
+                </span>
+              </>
+            )}
+            <span>Medan, Indonesia</span>
+          </div>
         </Container>
       </div>
     </footer>

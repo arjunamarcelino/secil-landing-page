@@ -15,7 +15,7 @@ const authorProjection = `{
 
 export const siteSettingsQuery = defineQuery(`*[_type == "siteSettings"][0]{
   orgName, description,
-  contact, socialLinks, donation, defaultSeo
+  contact, socialLinks, donation, defaultSeo, hki
 }`);
 
 export const programCardFields = `{

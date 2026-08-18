@@ -29,6 +29,7 @@ export default async function HomePage() {
   ]);
 
   const instagram = settings.socialLinks.find((s) => s.platform === "Instagram");
+  const socialUrls = settings.socialLinks.map((s) => s.url);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NGO",
@@ -36,7 +37,7 @@ export default async function HomePage() {
     url: siteUrl,
     logo: absoluteUrl("/icon"),
     description: settings.description,
-    ...(instagram ? { sameAs: [instagram.url] } : {}),
+    ...(socialUrls.length > 0 ? { sameAs: socialUrls } : {}),
   };
 
   return (

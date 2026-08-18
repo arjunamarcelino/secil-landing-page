@@ -70,6 +70,25 @@ export const siteSettings = defineType({
       title: "SEO default",
       type: "seo",
     }),
+    defineField({
+      name: "hki",
+      title: "Merek Terdaftar (HKI)",
+      type: "object",
+      fields: [
+        defineField({
+          name: "registrationNumber",
+          title: "Nomor registrasi",
+          type: "string",
+          description: "Contoh: IDM001097863.",
+        }),
+        defineField({
+          name: "url",
+          title: "Tautan validasi (DGIP)",
+          type: "url",
+          validation: (rule) => rule.uri({ scheme: ["http", "https"] }),
+        }),
+      ],
+    }),
   ],
   preview: {
     prepare: () => ({ title: "Pengaturan Situs" }),

@@ -114,6 +114,12 @@ export interface DefaultSeo {
   readonly description: string;
 }
 
+/** Trademark (HKI) registration reference. */
+export interface HkiInfo {
+  readonly registrationNumber: string;
+  readonly url: string;
+}
+
 export interface SiteSettings {
   readonly orgName: string;
   readonly description: string;
@@ -121,4 +127,5 @@ export interface SiteSettings {
   readonly socialLinks: readonly SocialLink[];
   readonly donation: DonationInfo;
   readonly defaultSeo: DefaultSeo;
+  readonly hki?: HkiInfo;
 }
